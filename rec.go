@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/briandowns/spinner"
+	// "github.com/briandowns/spinner"
 	"github.com/mitchellh/cli"
 	"github.com/olekukonko/tablewriter"
 	"github.com/yyoshiki41/go-radiko"

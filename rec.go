@@ -76,11 +76,11 @@ func (c *recCommand) Run(args []string) int {
 		return 1
 	}
 
-	if err := extractPngFile(flagForce); err != nil {
-		c.ui.Error(fmt.Sprintf(
-			"Failed to execute swfextract: %s", err))
-		return 1
-	}
+	// if err := extractPngFile(flagForce); err != nil {
+	// 	c.ui.Error(fmt.Sprintf(
+	// 		"Failed to execute swfextract: %s", err))
+	// 	return 1
+	// }
 
 	ctx, ctxCancel := context.WithCancel(context.Background())
 	defer ctxCancel()

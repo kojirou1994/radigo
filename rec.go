@@ -5,6 +5,8 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"io"
+	"net/http"
 	"path"
 	"strings"
 	"time"
@@ -67,8 +69,8 @@ func (c *recCommand) Run(args []string) int {
 
 	c.ui.Output("Now downloading.. ")
 	spin := spinner.New(spinner.CharSets[9], time.Second)
-	spin.Start()
-	defer spin.Stop()
+	// spin.Start()
+	// defer spin.Stop()
 
 	if err := downloadSwfPlayer(flagForce); err != nil {
 		c.ui.Error(fmt.Sprintf(
@@ -125,7 +127,9 @@ func (c *recCommand) Run(args []string) int {
 			"Failed to get playlist.m3u8: %s", err))
 		return 1
 	}
-
+	f, err := os.Create("Radigo.m3u8")
+	res, err := http.Get(uri)
+	io.Copy(f, res.Body)
 	chunklist, err := radiko.GetChunklistFromM3U8(uri)
 	if err != nil {
 		c.ui.Error(fmt.Sprintf(

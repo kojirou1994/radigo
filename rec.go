@@ -128,9 +128,9 @@ func (c *recCommand) Run(args []string) int {
 		return 1
 	}
 	
-	f, _ := os.Create("Radigo.m3u8")
+	m3u8, _ := os.Create("Radigo.m3u8")
 	res, _ := http.Get(uri)
-	io.Copy(f, res.Body)
+	io.Copy(m3u8, res.Body)
 	return 1
 
 

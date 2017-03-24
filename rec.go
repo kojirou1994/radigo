@@ -68,7 +68,7 @@ func (c *recCommand) Run(args []string) int {
 	}
 
 	c.ui.Output("Now downloading.. ")
-	spin := spinner.New(spinner.CharSets[9], time.Second)
+	// spin := spinner.New(spinner.CharSets[9], time.Second)
 	// spin.Start()
 	// defer spin.Stop()
 

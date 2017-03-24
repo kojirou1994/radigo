@@ -1,4 +1,4 @@
-package: github.com/yyoshiki41/radigo
+package: github.com/Kojirou1994/radigo
 import:
 - package: github.com/mitchellh/cli
   version: master

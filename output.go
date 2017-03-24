@@ -7,7 +7,7 @@ import (
 	"os"
 	"path"
 
-	"github.com/yyoshiki41/radigo/internal"
+	"github.com/Kojirou1994/radigo/internal"
 )
 
 var aacResultFile string

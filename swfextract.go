@@ -11,21 +11,21 @@ var (
 	pngFile   = path.Join(cachePath, "authkey.png")
 )
 
-func extractPngFile(flagForce bool) error {
-	_, err := os.Stat(pngFile)
-	if flagForce && os.IsExist(err) {
-		os.Remove(pngFile)
-	}
+// func extractPngFile(flagForce bool) error {
+// 	_, err := os.Stat(pngFile)
+// 	if flagForce && os.IsExist(err) {
+// 		os.Remove(pngFile)
+// 	}
 
-	if flagForce || os.IsNotExist(err) {
-		err := swfExtract(swfPlayer, pngFile)
-		if err != nil {
-			return err
-		}
-	}
+// 	if flagForce || os.IsNotExist(err) {
+// 		err := swfExtract(swfPlayer, pngFile)
+// 		if err != nil {
+// 			return err
+// 		}
+// 	}
 
-	return nil
-}
+// 	return nil
+// }
 
 func swfExtract(swfPath, output string) error {
 	cmdPath, err := exec.LookPath("swfextract")

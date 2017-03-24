@@ -119,6 +119,7 @@ func (c *recCommand) Run(args []string) int {
 	}()
 
 	uri, err := client.TimeshiftPlaylistM3U8(ctx, stationID, startTime)
+	fmt.Printf(uri)
 	if err != nil {
 		c.ui.Error(fmt.Sprintf(
 			"Failed to get playlist.m3u8: %s", err))

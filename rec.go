@@ -127,10 +127,9 @@ func (c *recCommand) Run(args []string) int {
 			"Failed to get playlist.m3u8: %s", err))
 		return 1
 	}
-
-
-	f := os.Create("Radigo.m3u8")
-	res, err := http.Get(uri)
+	
+	f, _ := os.Create("Radigo.m3u8")
+	res, _ := http.Get(uri)
 	io.Copy(f, res.Body)
 	return 1
 

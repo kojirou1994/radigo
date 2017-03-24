@@ -27,12 +27,12 @@ var (
 // 	return nil
 // }
 
-func swfExtract(swfPath, output string) error {
-	cmdPath, err := exec.LookPath("swfextract")
-	if err != nil {
-		return err
-	}
+// func swfExtract(swfPath, output string) error {
+// 	cmdPath, err := exec.LookPath("swfextract")
+// 	if err != nil {
+// 		return err
+// 	}
 
-	swfExtract := exec.Command(cmdPath, "-b", "12", swfPath, "-o", output)
-	return swfExtract.Run()
-}
+// 	swfExtract := exec.Command(cmdPath, "-b", "12", swfPath, "-o", output)
+// 	return swfExtract.Run()
+// }

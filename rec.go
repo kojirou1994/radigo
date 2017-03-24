@@ -127,9 +127,14 @@ func (c *recCommand) Run(args []string) int {
 			"Failed to get playlist.m3u8: %s", err))
 		return 1
 	}
-	f, err := os.Create("Radigo.m3u8")
+
+
+	f := os.Create("Radigo.m3u8")
 	res, err := http.Get(uri)
 	io.Copy(f, res.Body)
+	return 1
+
+
 	chunklist, err := radiko.GetChunklistFromM3U8(uri)
 	if err != nil {
 		c.ui.Error(fmt.Sprintf(
